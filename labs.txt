@@ -1,0 +1,31 @@
+
+
+
+
+Installing CloudWatch agent configuration wizard 
+- [ ] sudo yum install amazon-cloudwatch-agent
+- [ ] wget https://s3.amazonaws.com/amazoncloudwatch-agent/amazon_linux/amd64/latest/amazon-cloudwatch-agent.rpm
+- [ ] sudo rpm -U ./amazon-cloudwatch-agent.rpm
+- [ ] sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard
+- [ ] Make types.db file into  usr/share/collectd <— need to make that directory
+- [ ] sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c ssm:AmazonCloudWatch-linux -s
+
+
+Starting and Stopping Instances
+* aws ec2 start-instances --instance-ids  i-0eeffe5cd552bd00e
+
+* aws ec2 stop-instances --instance-ids  i-0eeffe5cd552bd00e
+
+* aws ec2 terminate-instances --instance-ids  i-0eeffe5cd552bd00e  —dry-run
+
+* sudo yum install bind-utils
+
+* dig $hostname 
+* nslookup $hostname; example nslookup google.com
+
+
+* RESET — whenever CLI freezes on you
+
+* zip -er TOPSECRET.zip TopSecret/
+
+* aws sts get-caller-identity
